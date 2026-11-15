@@ -1,6 +1,6 @@
 # Repo rename plan: MiniPOS → Smart Cashier
 
-**Status:** Waiting for your approval. Nothing has been renamed yet.
+**Status:** Done (2026-11-15). All three repos are renamed, the old releases URL redirects (checked), and the local remotes point to the new names. Folders kept as they were.
 
 ## What gets renamed
 
