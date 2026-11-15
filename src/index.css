@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-app: "Geist", "Inter", system-ui, sans-serif;
+
+  /* Site: Smart Cashier brand (emerald + gold, from the app icon) */
+  --color-ink: #0b2e20;        /* deep forest: headings, dark panels */
+  --color-ink-2: #123d2b;
+  --color-ink-line: #1d4d38;
+  --color-body: #2f4238;
+  --color-muted: #55675d;
+  --color-on-dark: #b4cfc1;
+  --color-soft: #f1f6f2;       /* mint-tinted off-white */
+  --color-line: #e3ece6;
+  --color-line-2: #d7e4db;
+  --color-line-3: #c6d7cc;
+  --color-brand: #16855a;      /* emerald: primary buttons, highlights */
+  --color-brand-2: #0f6e49;
+  --color-brand-soft: #e6f4ec;
+  --color-accent: #ffc93c;     /* gold coin */
+  --color-good: #16855a;
+  --color-good-on-dark: #7fd8a6;
+  --color-whatsapp: #25d366;
+
+  /* Real Smart Cashier app (from POS/src/index.css) */
+  --color-app-bg: #fdf8f7;
+  --color-app-fg: #1c1b1b;
+  --color-app-low: #f7f3f2;
+  --color-app-cont: #f1edec;
+  --color-app-high: #ebe7e6;
+  --color-app-border: #c6c7c1;
+  --color-app-muted: #767872;
+  --color-app-warn: #b45309;
+  --color-app-warn-bg: #fef3c7;
+  --color-app-bad: #ba1a1a;
+  --color-app-bad-bg: #ffdad6;
+  --color-app-ok: #15803d;
+  --color-app-ok-bg: #f0fdf4;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+:focus-visible { outline: 2px solid #16855a; outline-offset: 2px; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Hero window: tilted, settles flat with scroll (driven by --tilt 0..1) */
+@media (min-width: 640px) {
+  .tilt {
+    transform: perspective(1600px) rotateX(calc(var(--tilt, 1) * 14deg)) scale(calc(1 - var(--tilt, 1) * 0.06));
+    transform-origin: 50% 0%;
+    will-change: transform;
+  }
+}
+
+/* Dashed line with data "flowing" down to the database */
+.flow-line {
+  background: repeating-linear-gradient(to bottom, #9e9e99 0 5px, transparent 5px 10px);
+  background-size: 2px 20px;
+  animation: flow 0.9s linear infinite;
+}
+@keyframes flow { to { background-position: 0 20px; } }
+
+/* Gentle attention ring on the WhatsApp button */
+.fab::after {
+  content: ""; position: absolute; inset: 0; border-radius: 999px;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  animation: ring 2.4s ease-out 1.5s 3;
+}
+@keyframes ring { to { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); } }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .tilt { transform: none; }
+  * { animation: none !important; transition-duration: 0s !important; }
+}
+
+/* Text logo: the gold coin is the dot of the "i" */
+.wm-i { position: relative; display: inline-block; }
+.wm-coin {
+  position: absolute; left: 50%; top: .075em; width: .22em; height: .22em; transform: translateX(-50%);
+  border-radius: 50%; background: linear-gradient(135deg, #fff1a8, #ffc93c); box-shadow: inset 0 0 0 .028em #16855a;
+}

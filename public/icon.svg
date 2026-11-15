@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22a06b"/><stop offset="1" stop-color="#0b5a3a"/></linearGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset="1" stop-color="#ffc93c"/></linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".16"/><stop offset=".5" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#tile)"/>
+  <rect width="64" height="64" rx="15" fill="url(#gloss)"/>
+  <path d="M17 17H43V51L38.67 47.5L34.33 51L30 47.5L25.67 51L21.33 47.5L17 51Z" fill="#022c1b" opacity=".35"/>
+  <path d="M17 15H43V49L38.67 45.5L34.33 49L30 45.5L25.67 49L21.33 45.5L17 49Z" fill="#ffffff"/>
+  <rect x="22" y="22" width="15" height="3.5" rx="1.75" fill="#0b5a3a" opacity=".3"/>
+  <rect x="22" y="29" width="10" height="3.5" rx="1.75" fill="#0b5a3a" opacity=".3"/>
+  <rect x="22" y="36.5" width="16" height="4" rx="2" fill="#0b5a3a"/>
+  <circle cx="46" cy="17" r="12" fill="url(#coin)" stroke="#16855a" stroke-width="3" paint-order="stroke"/>
+  <circle cx="46" cy="17" r="9.2" fill="none" stroke="#0b5a3a" stroke-width=".9" stroke-dasharray="1.2 1.5" opacity=".5"/>
+  <g transform="translate(46 17) scale(.5) translate(-32 -32)" fill="none" stroke="#0b5a3a" stroke-width="5" stroke-linecap="round">
+    <path d="M38.5 25.2C37 22.9 34.8 21.8 31.9 21.8C28.1 21.8 25.6 23.8 25.6 26.8C25.6 33.6 38.8 30.6 38.8 37.4C38.8 40.4 36 42.4 32.1 42.4C29 42.4 26.5 41.1 25.1 38.7"/>
+    <path d="M32 17.5V21.5M32 42.5V46.5"/>
+  </g>
+</svg>
