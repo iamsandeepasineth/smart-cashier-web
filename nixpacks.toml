@@ -1,0 +1,7 @@
+[variables]
+NIXPACKS_NODE_VERSION = "22"
+
+# Easypanel sets NODE_ENV=production, which makes `npm ci` skip devDependencies
+# (typescript, vite, tailwind). They are needed for `npm run build`.
+[phases.install]
+cmds = ["npm ci --include=dev"]
